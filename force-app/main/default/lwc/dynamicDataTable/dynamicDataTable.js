@@ -95,7 +95,9 @@ export default class DynamicDataTable extends LightningElement {
             .then(() => {
                 this.showSuccess('Record(s) updated successfully!');
                 this.draftValues = []; // Clear draft values
-                return refreshApex(this.wiredRecordsResult); // Refresh records
+                //refreshApex not working for some reason.  using location.reload for now
+                //return refreshApex(this.wiredRecordsResult); // Refresh records 
+                location.reload();
             })
             .then(() => {
                 this.updateDisplayedRecords(); // Update displayed records after save
