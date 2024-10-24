@@ -19,7 +19,8 @@ Follow these steps to install and deploy the `DynamicDataTable` component in you
 
 Click the link below to install the unmanaged package containing the `DynamicDataTable` component:
 
-[Install DynamicDataTable Package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM00000059HB)
+[Install DynamicDataTable Package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM00000059HB) V 1.0
+(https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM00000059In) V 1.1
 
 1. Log in to your Salesforce account.
 2. Choose the environment you want to install the package into (Production or Sandbox).
