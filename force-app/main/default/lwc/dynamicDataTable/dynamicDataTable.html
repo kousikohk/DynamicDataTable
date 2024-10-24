@@ -1,0 +1,43 @@
+<template>
+    <div class="datatable-container">
+        <h2 class="datatable-title">Record List</h2>
+
+        <div class="slds-m-around_medium">
+            <!-- Search Box -->
+            <lightning-input 
+                type="search" 
+                label="Search" 
+                onchange={handleSearch} 
+                placeholder="Search by Name">
+            </lightning-input>
+            
+            <!-- Table -->
+            <lightning-datatable
+                class="full-width-table,slds-datatable"
+                key-field="Id"
+                data={displayedRecords}
+                columns={columns}
+                onsave={handleSave}
+                sorted-by={sortedBy}
+                sorted-direction={sortedDirection}
+                onsort={handleSort}
+                draft-values={draftValues}
+                hide-checkbox-column>
+            </lightning-datatable>
+            
+            <!-- Pagination -->
+            <div class="slds-m-top_medium">
+                <lightning-button 
+                    disabled={disablePrev} 
+                    label="Previous" 
+                    onclick={handlePrev}>
+                </lightning-button>
+                <lightning-button 
+                    disabled={disableNext} 
+                    label="Next" 
+                    onclick={handleNext}>
+                </lightning-button>
+            </div>
+        </div>
+    </div>
+</template>
