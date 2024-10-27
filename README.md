@@ -21,6 +21,7 @@ Click the link below to install the unmanaged package containing the `DynamicDat
 
 [Install DynamicDataTable Package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM00000059HB) V 1.0
 (https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM00000059In) V 1.1
+(https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM00000059ST) V 1.2
 
 1. Log in to your Salesforce account.
 2. Choose the environment you want to install the package into (Production or Sandbox).
@@ -28,7 +29,7 @@ Click the link below to install the unmanaged package containing the `DynamicDat
 4. Choose the appropriate security settings for your users.
 5. Click **Install** and wait for the package to finish installing.
 
-### Step 2: Add the DynamicDataTable Component to a Page (It comes with a Page in which it is added by default, feel free to use the same page with API name Dynamic_Data_Table)
+### Step 2: Add the DynamicDataTable Component to a Page (It comes with a Page in which it is added by default, feel free to use the same page with API name Dynamic_Data_Table which can be accessed by assigning the logged in user the Dynamic Datatable Permission Set)
 
 Once the package is installed, you can add the component to any Lightning App or Record Page.
 
@@ -124,7 +125,7 @@ Once the deployment is successful, you should see a confirmation message in your
    - In Salesforce, navigate to **Setup**.
    - In the Quick Find box, search for **App Builder** and open the **Lightning App Builder**.
    
-2. **Edit a Page:**
+2. **Edit a Page:** (the package already contains the page Dynamic_Data_Table which can be accessed by assigning the logged in user the Dynamic Datatable Permission Set)
    - Select a page (e.g., a Record Page) that you want to add the **DynamicDataTable** to, or create a new page.
    
 3. **Add DynamicDataTable:**
