@@ -50,7 +50,7 @@ export default class DynamicDataTable extends LightningElement {
         this.searchField = this.searchField || 'Name';
     }
     
-     get fieldNames() {
+    get fieldNames() {
         return this.fields.map(field => field.apiName).join(',');
     }
 
@@ -160,6 +160,5 @@ export default class DynamicDataTable extends LightningElement {
     get disableNext() {
         return this.currentPage >= Math.ceil(this.records.length / this.pageSize);
     }
-
     // Getters End
 }
