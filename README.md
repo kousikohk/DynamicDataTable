@@ -22,6 +22,7 @@ Click the link below to install the unmanaged package containing the `DynamicDat
 [Install DynamicDataTable Package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM00000059HB) V 1.0
 (https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM00000059In) V 1.1
 (https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM00000059ST) V 1.2
+(https://login.salesforce.com/packaging/installPackage.apexp?p0=04tdM0000005Ow9) V 1.3
 
 1. Log in to your Salesforce account.
 2. Choose the environment you want to install the package into (Production or Sandbox).
@@ -48,6 +49,8 @@ Once the package is installed, you can add the component to any Lightning App or
    - In the right-hand properties pane, configure the following settings:
      - **Object Name**: Enter the API name of the object you want to display records for (e.g., `Account`, `Contact`).
      - **Fields**: Enter the API names of the fields you want to display (e.g., `Name, Industry, AnnualRevenue`).
+     Example format (It has to be in JSON format): [{ "label": "Account Name", "apiName": "Name", "editable": false },{ "label": "Industry", "apiName": "Industry", "editable": false },     { "label": "Annual Revenue", "apiName": "AnnualRevenue", "type": "currency", "editable": true }]
+
      - **Search Field**: Set the API name of the field for the search filter (e.g., `Name`).
 
 5. **Save & Activate:**
@@ -136,6 +139,7 @@ Once the deployment is successful, you should see a confirmation message in your
    - In the right-hand properties pane, configure the following settings:
      - **Object Name**: Enter the API name of the object you want to display records for (e.g., `Account`, `Contact`).
      - **Fields**: Enter the API names of the fields you want to display (e.g., `Name`, `Industry`, `AnnualRevenue`).
+     Example format (It has to be in JSON format): [{ "label": "Account Name", "apiName": "Name", "editable": false },{ "label": "Industry", "apiName": "Industry", "editable": false },     { "label": "Annual Revenue", "apiName": "AnnualRevenue", "type": "currency", "editable": true }]
      - **Search Field**: Set the API name of the field for the search filter (e.g., `Name`).
 
 5. **Save & Activate:**

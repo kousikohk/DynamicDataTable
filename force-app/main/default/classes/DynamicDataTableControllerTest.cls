@@ -16,7 +16,8 @@ public class DynamicDataTableControllerTest {
 
     @IsTest
     static void testGetRecordsPositive() {
-        List<String> fields = new List<String>{'Name', 'Industry', 'AnnualRevenue'};
+        // Update fields to be a single String instead of List<String>
+        String fields = 'Name, Industry, AnnualRevenue';
         List<SObject> result = DynamicDataTableController.getRecords('Account', fields, 'Name', 'Test Account');
         System.assertNotEquals(0, result.size(), 'No records returned!');
         System.assertEquals(5, result.size(), 'Expected 5 records.');
@@ -27,21 +28,21 @@ public class DynamicDataTableControllerTest {
 
     @IsTest
     static void testGetRecordsNoResults() {
-        List<String> fields = new List<String>{'Name', 'Industry', 'AnnualRevenue'};
+        String fields = 'Name, Industry, AnnualRevenue'; // Updated to String
         List<SObject> result = DynamicDataTableController.getRecords('Account', fields, 'Name', 'Nonexistent Account');
         System.assertEquals(0, result.size(), 'Records should not be returned.');
     }
 
     @IsTest
     static void testGetRecordsEmptySearchKey() {
-        List<String> fields = new List<String>{'Name', 'Industry', 'AnnualRevenue'};
+        String fields = 'Name, Industry, AnnualRevenue'; // Updated to String
         List<SObject> result = DynamicDataTableController.getRecords('Account', fields, 'Name', '');
         System.assertEquals(5, result.size(), 'Expected 5 records for empty search key.');
     }
 
     @IsTest
     static void testGetRecordsInvalidSObject() {
-        List<String> fields = new List<String>{'Name', 'Industry', 'AnnualRevenue'};
+        String fields = 'Name, Industry, AnnualRevenue'; // Updated to String
         try {
             DynamicDataTableController.getRecords('InvalidObject', fields, 'Name', 'Test');
             System.assert(false, 'Expected an exception for invalid SObject name.');

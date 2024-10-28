@@ -24,14 +24,21 @@ export default class DynamicDataTable extends LightningElement {
         // Set default values for fields and objectName
         if (!this.fields.length) {
             this.fields = [
-                { label: 'Account Name', apiName: 'Name', editable: false },
-                { label: 'Industry', apiName: 'Industry', editable: false },
-                { label: 'Annual Revenue', apiName: 'AnnualRevenue', type: 'currency', editable: true }
+                { "label": "Account Name", "apiName": "Name", "editable": false },
+                { "label": "Industry", "apiName": "Industry", "editable": false },
+                { "label": "Annual Revenue", "apiName": "AnnualRevenue", "type": "currency", "editable": true }
             ];
+            
+        } 
+        if (this.fields) {
+            try {
+                this.fields = JSON.parse(this.fields);
+                console.table(this.fields);
+            } catch (error) {
+                console.error('Invalid JSON string for fields:', error);
+            }
         }
-        this.objectName = this.objectName || 'Account';
-        this.searchField = this.searchField || 'Name';
-
+        // Convert fields to columns for the datatable
         this.columns = this.fields.map(field => ({
             label: field.label,
             fieldName: field.apiName,
@@ -39,6 +46,12 @@ export default class DynamicDataTable extends LightningElement {
             editable: field.editable || false,
             type: field.type || 'text'
         }));
+        this.objectName = this.objectName || 'Account';
+        this.searchField = this.searchField || 'Name';
+    }
+    
+     get fieldNames() {
+        return this.fields.map(field => field.apiName).join(',');
     }
 
     @wire(getRecords, { sObjectName: '$objectName', fields: '$fieldNames', searchField: '$searchField', searchKey: '$searchKey' })
@@ -148,8 +161,5 @@ export default class DynamicDataTable extends LightningElement {
         return this.currentPage >= Math.ceil(this.records.length / this.pageSize);
     }
 
-    get fieldNames() {
-        return this.fields.map(field => field.apiName);
-    }
     // Getters End
 }
